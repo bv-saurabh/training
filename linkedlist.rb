@@ -16,7 +16,7 @@ class LinkedList
 
   def add(value)
     current = @head
-    while current.next != nil
+    while current.next
       current = current.next
     end
     current.next = LLNode.new(value)
@@ -24,7 +24,7 @@ class LinkedList
 
   def find(value)
     node = @head
-    return false if !node.next
+    return false unless node.next
     return node  if node.value == value
     while (node = node.next)
       return node if node.value == value
@@ -35,8 +35,8 @@ class LinkedList
     current = @head
     temp = nil
     previous = nil
-    while current != nil
-      if current.node == value
+    while current
+      if current.value == value
         temp = current.next
         previous.next = temp
         return true
@@ -52,7 +52,7 @@ class LinkedList
     arr = []
     temp = nil
     current = @head
-    while current != nil
+    while current
       arr << current.value
       current = current.next
     end
@@ -62,7 +62,7 @@ class LinkedList
   def reverse
     previous = nil
     current = @head
-    while current != nil
+    while current
       next_node = current.next
       current.next = previous
       previous = current
