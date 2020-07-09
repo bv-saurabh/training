@@ -1,3 +1,4 @@
+# Adding comment
 class LLNode
   attr_accessor :value, :next
   
